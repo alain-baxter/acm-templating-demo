@@ -3,5 +3,4 @@ resources:
 - static/policies/templates
 - static/policies/constraints
 - project-a
-- project-a-collision
 - project-b  
