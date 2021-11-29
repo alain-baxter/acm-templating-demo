@@ -1,0 +1,36 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: blockandexportreview
+  annotations:
+    configmanagement.gke.io/cluster-selector: selector-environment-dev
+spec:
+  crd:
+    spec:
+      names:
+        kind: BlockAndExportReview
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            exportData:
+              type: boolean
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package blockandexportreview
+
+        violation[{"msg": msg}] {
+          data_export := get_data
+          msg := sprintf("Blocked to export objects:\nInput: %v%v", [input, data_export])
+        }
+
+        get_data = data_export {
+          input.parameters.exportData
+          data_export := sprintf(" \nData: {\"inventory\": %v}", [data.inventory])
+        }
+
+        get_data = data_export {
+          not input.parameters.exportData
+          data_export := ""
+        }

@@ -1,0 +1,17 @@
+applySpecVersion: 1
+spec:
+  configSync:
+    # Set to true to install and enable Config Sync
+    enabled: true
+    sourceFormat: unstructured
+    syncRepo: git@github.com:alain-baxter/acm-templating-demo.git 
+    syncBranch: main
+    secretType: ssh
+    policyDir: config-kustomize
+  policyController:
+    # Set to true to install and enable Policy Controller
+    enabled: true
+    templateLibraryInstalled: true
+    referentialRulesEnabled: true
+    logDeniesEnabled: true
+    # exemptableNamespaces: ["namespace-name"]

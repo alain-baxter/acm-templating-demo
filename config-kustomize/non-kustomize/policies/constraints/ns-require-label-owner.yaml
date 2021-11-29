@@ -1,0 +1,21 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: ns-require-label-owner
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Namespace"]
+    excludedNamespaces:
+      - "kube-*"
+      - "config-management-monitoring"
+      - "config-management-system"
+      - "istio-system"
+      - "gatekeeper-system"
+      - "resource-group-system"
+      - "hnc-system"
+  parameters:
+    labels:
+      - key: "owner"

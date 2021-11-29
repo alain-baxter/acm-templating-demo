@@ -1,0 +1,12 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: BlockAndExportReview
+metadata:
+  name: block-and-export-review-input
+  annotations:
+    configmanagement.gke.io/cluster-selector: selector-environment-dev
+spec:
+  match:
+    scope: Namespaced
+    namespaces: ["policy-review-exporting"]
+  parameters:
+    exportData: false

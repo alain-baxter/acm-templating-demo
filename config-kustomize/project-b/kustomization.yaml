@@ -1,0 +1,31 @@
+namespace: project-b
+
+commonLabels:
+  owner: team-a
+  app: project-b
+
+resources:
+- ../base
+
+patches:
+- target:
+    kind: RoleBinding
+    name: developer-edit
+  patch: |-
+    - op: replace
+      path: /subjects/0/name
+      value: project-b-developers@company.com
+- target:
+    kind: RoleBinding
+    name: developer-view
+  patch: |-
+    - op: replace
+      path: /subjects/0/name
+      value: project-b-developers@company.com
+- target:
+    kind: Namespace
+    name: default-name
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: project-b
