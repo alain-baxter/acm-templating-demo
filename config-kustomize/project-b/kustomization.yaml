@@ -13,14 +13,7 @@ resources:
 patches:
 - target:
     kind: RoleBinding
-    name: developer-edit
-  patch: |-
-    - op: replace
-      path: /subjects/0/name
-      value: project-b-developers@company.com
-- target:
-    kind: RoleBinding
-    name: developer-view
+    name: developer-role
   patch: |-
     - op: replace
       path: /subjects/0/name
