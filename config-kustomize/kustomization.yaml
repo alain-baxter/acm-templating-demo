@@ -1,3 +1,4 @@
 resources:
+- static
 - project-a
 - project-b  
