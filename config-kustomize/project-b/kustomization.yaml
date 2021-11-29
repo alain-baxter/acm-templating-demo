@@ -4,6 +4,9 @@ commonLabels:
   owner: team-a
   app: project-b
 
+commonAnnotations:
+  configmanagement.gke.io/cluster-selector: selector-environment-prod
+
 resources:
 - ../base
 
