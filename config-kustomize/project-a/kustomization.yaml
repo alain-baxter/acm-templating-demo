@@ -6,6 +6,7 @@ commonLabels:
 
 resources:
 - ../base
+- developer-conditional-edit.yaml
 
 patches:
 - target:
@@ -15,13 +16,6 @@ patches:
     - op: replace
       path: /subjects/0/name
       value: project-a-developers@company.com
-- target:
-    kind: RoleBinding
-    name: developer-role
-  patch: |-
-    - op: replace
-      path: /roleRef/name
-      value: edit
 - target:
     kind: Namespace
     name: default-name
