@@ -2,5 +2,6 @@ resources:
 - static/clusters
 - static/policies/templates
 - static/policies/constraints
+- cert-manager
 - project-a
 - project-b  

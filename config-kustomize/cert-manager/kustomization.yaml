@@ -1,0 +1,18 @@
+resources:
+- cert-manager.crds.yaml
+
+commonLabels:
+  owner: platform-admins
+  app: cert-manager
+
+helmCharts:
+- name: cert-manager
+  version: v1.5.4
+  repo: https://charts.jetstack.io
+  releaseName: internal-cert-manager
+  namespace: internal-cert-manager
+  valuesInline:
+    podLabels:
+      test: value
+      check: "true"
+
