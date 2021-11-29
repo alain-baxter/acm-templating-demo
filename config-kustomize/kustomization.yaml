@@ -1,4 +1,6 @@
 resources:
-- static
+- static/clusters
+- static/policies/templates
+- static/policies/constraints
 - project-a
 - project-b  
