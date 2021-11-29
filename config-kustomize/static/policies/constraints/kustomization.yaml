@@ -1,0 +1,3 @@
+resources:
+- block-and-export-review-input.yaml
+- ns-require-label-owner.yaml

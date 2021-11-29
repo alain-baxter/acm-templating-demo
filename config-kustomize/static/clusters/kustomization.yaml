@@ -1,0 +1,6 @@
+resources:
+- dev-clusterselector.yaml
+- gke-clusterselector.yaml
+- non-prod-cluster.yaml
+- prod-cluster.yaml
+- prod-clusterselector.yaml

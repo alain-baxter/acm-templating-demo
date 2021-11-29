@@ -1,0 +1,4 @@
+resources:
+- clusters
+- policies/templates
+- policies/constraints
