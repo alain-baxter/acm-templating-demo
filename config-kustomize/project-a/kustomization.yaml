@@ -5,7 +5,8 @@ commonLabels:
   app: project-a
 
 resources:
-- ../base
+#- ../base
+- ../../outside-base
 - developer-conditional-edit.yaml
 
 patches:
